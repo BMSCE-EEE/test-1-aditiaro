@@ -1,1 +1,133 @@
- 
+~/test-1-aditiaro$ 
+~/test-1-aditiaro$ gcc -g p0original.c
+~/test-1-aditiaro$ ./a.out
+My name is Aditi~/test-1-aditiaro$ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x64e: file p0original.c, line 6.
+(gdb) r
+Starting program: /home/runner/test-1-aditiaro/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p0original.c:6
+warning: Source file is more recent than executable.
+6     printf("My name is Aditi");
+(gdb) n
+7     return 0;
+(gdb) n
+8   } 
+(gdb) n
+__libc_start_main (main=0x564f2ea0064a <main>, argc=1, argv=0x7fff7569ac18, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fff7569ac08) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) c
+Continuing.
+My name is Aditi[Inferior 1 (process 44) exited normally]
+(gdb) 
+[1]+  Stopped                 gdb a.out
+~/test-1-aditiaro$ gcc -g p0original.c
+~/test-1-aditiaro$ ./a.out
+My name is Aditi~/test-1-aditiaro$ gcc -g p0original.c
+~/test-1-aditiaro$ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x63e: file p0original.c, line 6.
+(gdb) r
+Starting program: /home/runner/test-1-aditiaro/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p0original.c:6
+6     printf("My name is Aditi\n");
+(gdb) n
+My name is Aditi
+7     return 0;
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) n
+8   } 
+(gdb) n
+__libc_start_main (
+    main=0x562d0160063a <main>, argc=1, 
+    argv=0x7fff892795f8, 
+    init=<optimized out>, 
+    fini=<optimized out>, 
+    rtld_fini=<optimized out>, 
+    stack_end=0x7fff892795e8)
+    at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) b main
+Note: breakpoint 1 also set at pc 0x562d0160063e.
+Breakpoint 2 at 0x562d0160063e: file p0original.c, line 6.
+(gdb) b 6
+Breakpoint 3 at 0x7f50cf617b10: file ../csu/libc-start.c, line 6.
+(gdb) 1
+Undefined command: "1".  Try "help".
+(gdb) c
+Continuing.
+[Inferior 1 (process 103) exited normally]
+(gdb) c
+The program is not being run.
+(gdb) c
+The program is not being run.
+(gdb) 
+The program is not being run.
+(gdb) 
+The program is not being run.
+(gdb) r
+Starting program: /home/runner/test-1-aditiaro/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 3, __libc_start_main (
+    main=0x55ca7e80063a <main>, argc=1, 
+    argv=0x7ffced0f39a8, 
+    init=0x55ca7e800660 <__libc_csu_init>, fini=0x55ca7e8006d0 <__libc_csu_fini>, 
+    rtld_fini=0x7f0c3c169b40 <_dl_fini>, 
+    stack_end=0x7ffced0f3998)
+    at ../csu/libc-start.c:137
+137 ../csu/libc-start.c: No such file or directory.
+(gdb) c
+Continuing.
+
+Breakpoint 1, main () at p0original.c:6
+6     printf("My name is Aditi\n");
+(gdb) l
+1   #include<stdio.h>
+2
+3
+4   int main()
+5   {
+6     printf("My name is Aditi\n");
+7     return 0;
+8   } 
+(gdb) Quit
+(gdb) 
+[2]+  Stopped                 gdb a.out
